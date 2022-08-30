@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <script>
+        partidos = ["Partido (MDB)","Partido (PT)","Partido (PDT)","Partido (PL)"]
+        opcoesEleicao = ["Simone Tebet", "Luiz Inácio Lula da Silva", "Ciro Gomes", "Jair Bolsonaro"];
+        do {
+            a = parseInt(Math.random() * 4);
+            b = parseInt(Math.random() * 4);
+            primeiroCandidato = opcoesEleicao[a];
+            segundoCandidato = opcoesEleicao[b];
+        } while (primeiroCandidato == segundoCandidato)
+
+        pct1 = Math.random()*100;
+        pct2 = 100-pct1;
+
+        document.write(`<table><tr><td><img src="img/${primeiroCandidato}.png"></td><td>${primeiroCandidato}<br>${partidos[a]}<br>Resultado: ${pct1.toFixed(1)} %</td></tr></table> <br>`);
+        document.write(`<table><tr><td><img src="img/${segundoCandidato}.png"></td><td>${segundoCandidato}<br>${partidos[b]}<br>Resultado: ${pct2.toFixed(1)} %</td></tr></table> <br>`);
+        
+        if(pct1 > pct2){
+            document.write(`<h2>Candidato(a) vencedor(a): ${primeiroCandidato} (${pct1.toFixed(1)}%)</h2>`);
+        } else if (pct2 > pct1){
+            document.write(`<h2>Candidato(a) vencedor(a): ${segundoCandidato} (${pct2.toFixed(1)}%)</h2>`);
+        } else {
+            document.write(`<h2>Empatou vamos ter 2 presidas!!!!</h2>`)
+        }
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
